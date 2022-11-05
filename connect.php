@@ -7,7 +7,7 @@
     $number=$_POST['number'];
 
     $conn = new mysqli('localhost','root','123456');
-    if ($conn->connect_error){
+    if (!$conn){
         echo "$conn->connect_error";
         die("connection failed : ",$conn->connect_error);
     } else{
