@@ -9,13 +9,15 @@
     $servername = "localhost";
     $username = "root";
     $password = "123456";
-    
+
     $conn = mysqli_connect($servername, $username, $password);
 
 // Check connection
 if (!$conn) {    echo "$conn->connect_error";
         die("connection failed : ",$conn->connect_error);
-    } else{
+    }
+     else
+    {
         $stmt=$conn->prepare("insert into registration (firstName,lastName,gender,email,password,number) values(?,?,?,?,?,?)");
         $stmt->bind_param("sssssi",$firstName,$lastName,$gender,$email,$password,$number);
         $stmt->execute();
