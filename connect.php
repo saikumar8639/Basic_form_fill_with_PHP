@@ -6,9 +6,15 @@
     $password=$_POST['password'];
     $number=$_POST['number'];
 
-    $conn = mysqli_connect("localhost", "root", "123456");
-    if (!$conn){
-        echo "$conn->connect_error";
+    $servername = "localhost";
+    $username = "root";
+    $password = "123456";
+
+// Create connection
+    $conn = mysqli_connect($servername, $username, $password);
+
+// Check connection
+if (!$conn) {    echo "$conn->connect_error";
         die("connection failed : ",$conn->connect_error);
     } else{
         $stmt=$conn->prepare("insert into registration (firstName,lastName,gender,email,password,number) values(?,?,?,?,?,?)");
