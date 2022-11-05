@@ -5,11 +5,9 @@
     $email=$_POST['email'];
     $password=$_POST['password'];
     $number=$_POST['number'];
-
     $servername = "localhost";
     $username = "root";
     $password = "123456";
-
     $conn = mysqli_connect($servername, $username, $password);
 
 // Check connection
